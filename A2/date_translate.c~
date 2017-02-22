@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+  char *translation;
+  translation = argv[1];
+  printf("%s\n", translation);
+  char day[3];
+  int *date;
+  char month[3];
+  int *year;
+  char time[9]; //longer- storing special characters is weird apparently
+  char zone[3];
+  scanf("%s %d %s %d %s %s", day, &date, month, &year, time, zone);
+  printf("%d %s %s %s %d %s", date, day, month, time, year, zone);
+  if ( argc != 2)
+    {
+      printf( "Incorrect # of arguments\n" );
+    }
+  else
+    {
+      FILE *f;
+      f = fopen(translation, "r");
+      fclose(f);
+    }
+  return(0);
+}

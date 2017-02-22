@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/jordanmiller/Documents/School/comp206/A3/q1b_crack.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+

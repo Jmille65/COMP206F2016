@@ -1,0 +1,10 @@
+1a. answer.txt permission denied- currently no listed permissions using ls -l
+b.
+$ chmod u+r answer.txt
+$ cat answer.txt
+This file contains a message with the answer to part 1. The message is:
+
+"Look what I learned in 206!"
+
+Congratulations if you read this.
+

@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int generateLabelsFromFile(char*, char*[]);
+
+int main(int argc, char *argv[])
+{
+  if (argc != 4)
+    {
+      printf("Invalid # of args. \n");
+      return(0);
+    }
+  int daysize = atoi(argv[2]);
+  if (daysize < 2)
+    {
+      printf("Invalid day spacing. \n");
+      return(0);
+    }
+  int firstday = atoi(argv[3]);  
+  if (firstday < 1 || firstday > 7)
+    {
+      printf("Invalid first day. \n");
+    }
+  char *transLabels[19];
+  if (generateLabelsFromFile(argv[1], transLabels) == 0)
+    {
+      printf("Translation file not found. \n");
+    }
+  printf("%s", transLabels[4]);
+  return(0);
+}
+
+
+
+int generateLabelsFromFile(char *fileName, char *sTranslated[]) //if file is not found, returns 0
+{
+  FILE *f;
+  printf("%s\n", fileName);
+  if ((f = fopen(fileName, "r")))
+    {
+      printf("adsf\n");
+      sTranslated[4] = "sdafasdfafdfsa";
+      fscanf(f, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s", sTranslated[0], sTranslated[1], sTranslated[2], sTranslated[3], sTranslated[4], sTranslated[5], sTranslated[6], sTranslated[7], sTranslated[8], sTranslated[9], sTranslated[10], sTranslated[11], sTranslated[12], sTranslated[13], sTranslated[14], sTranslated[15], sTranslated[16], sTranslated[17], sTranslated[18]);
+      fclose(f);
+      return(1);
+    }
+    else
+      {
+	return(0);
+      }
+}

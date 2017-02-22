@@ -1,0 +1,1 @@
+char* decrypt(int, char*);
